@@ -44,7 +44,7 @@ p{
 }
 @media screen and (max-width: 400px){
   video{
-    width: 400px;
+    width: 260px;
     height: 250px;
   }
 }
