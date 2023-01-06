@@ -42,3 +42,8 @@ p{
 #pork{
     background-color: pink;
 }
+@media screen and (max-width: 480px){
+    video{
+        width: auto;
+    }
+}
