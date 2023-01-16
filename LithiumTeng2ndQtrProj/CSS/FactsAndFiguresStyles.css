@@ -1,0 +1,92 @@
+body{
+    background-color: #32402F;
+    position: relative;
+}
+h1{
+    font-family: sans-serif;
+    font-size: 50px;
+    color: #ffe6cc;
+}
+button{
+    color: #ffff; 
+    font-size: 16px; 
+    line-height: 16px; 
+    padding: 6px; 
+    border-radius: 10px; 
+    font-family: Georgia, serif; 
+    font-weight: normal; 
+    text-decoration: none; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    background-image: linear-gradient(to right, #FF9900 0%, #FFA620 50%, #FFB340 100%); 
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid #FF9900; 
+    display: inline-block;
+}
+button:hover{
+    background: #1C6EA4;
+}
+button:active {
+    background: #144E75;
+}
+#LI1{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 43%;
+    top: 25%;
+}
+#I1{
+    position: absolute;
+    top: 120%;
+}
+#I2{
+    position: absolute;
+    top: 120%;
+    left: 20%;
+}
+#I3{
+    position: absolute;
+    top: 120%;
+    left: 40%;
+}
+#LI2{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 48%;
+    top: 25%;
+}
+#LI3{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 53%;
+    top: 25%;
+}
+#LI4{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 58%;
+    top: 25%;
+}
+#ISD{
+    position: absolute;
+    top: 180%;
+    display: inline-block;
+    text-align: justify;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #ffe6cc;
+}
+#placeholder{
+    position: absolute;
+    left: 53%;
+    border-radius: 25px;
+    top: 95%;
+}
+#logo{
+    position: absolute;
+    left: 88%;
+    top: 180%;
+}
