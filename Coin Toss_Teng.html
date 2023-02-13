@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Toss</title>
+</head>
+<body>
+    <form action = "" onSubmit = "return flipCoin()">
+        <input type = "submit" value = "Coin Toss">
+    </form>
+    <script>
+        function flipCoin(){
+            if(Math.random() > 0.5){
+                document.write("Heads");
+            }
+            else{
+                document.write("Tails");
+            }
+        }
+    </script>
+</body>
+</html>
