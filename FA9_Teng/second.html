@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>second.html</title>
+</head>
+<body>
+    <script>
+        function nextPic(){
+            document.getElementById("image").src = "images/Boston-Public-Garden.webp";
+        }
+        function prevPic(){
+            document.getElementById("image").src = "images/Spring-flowers-fruit-trees-bloom.webp";
+        }
+    </script>
+    <button onclick = "nextPic()">Change Image</button>
+    <button onclick = "prevPic()">Revert Image</button>
+    <br>
+    <img id = "image" src = "images/Spring-flowers-fruit-trees-bloom.webp" heigth = "500px" width = "500px">
+</body>
+</html>
