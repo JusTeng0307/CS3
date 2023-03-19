@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>One Time Password </title>
+		<!-- provide the necessary meta tags -->
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            a {font-size: 0.5em; color: maroon}
+        </style>
+
+	</head>
+<body onload = "createOTP()">
+	<h1> Final Verification Step </h1>
+	<h2> Current OTP: 
+        <span id="otp"> _ _ _ _ _ _ </span>
+        <a href="" onclick = "createOTP()"> New OTP </a>
+    </h2>
+    <button onclick = "checkUserOTP()"> Enter the OTP as shown above </button>
+    
+    <script>
+    	function createOTP(){ //This defines a function called, createOTP()
+            var digitsUsed = '0123456789';
+            var OTPGenerated = "";
+            for (i = 0; i < 6; i++) {
+                OTPGenerated = OTPGenerated + digitsUsed[Math.floor(Math.random() * 10)]; //This is used to generate a random 6-digit number using a for loop
+            }
+            document.getElementById('otp').textContent = OTPGenerated; //Displays the generated OTP in the element with the ID, 'otp'
+        }
+
+        function checkUserOTP(){ //This defines a function called, checkUserOTP()
+            var userOTP = prompt("Enter the OTP shown: "); //This asks the user to input the OTP displayed
+            var generatedOTP = document.getElementById('otp').innerHTML;
+            if(generatedOTP === userOTP){ //This checks of the user inputted OTP matches the generated OTP
+                window.open("https://khub.src.pshs.edu.ph/login/index.php"); //If it matches, it redirects the user to a website
+            }
+            else{
+                alert("The OTP you entered is incorrect. Please try it again."); //If it doesn't match, it alerts the user using a prompt message and generates another OTP
+                createOTP();
+            }
+        }
+    </script>
+</body>
+</html>

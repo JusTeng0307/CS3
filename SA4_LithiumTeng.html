@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Car Deprecation Calculator</title>
+		<!-- provide the necessary meta tags -->
+        <style>
+        	body {background: lightblue; 
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            span {color: maroon}
+        </style>
+
+	</head>
+<body>
+	<h1> Car Depreciation Calculator </h1>
+	<h2> Your Car Model: <span id="model"> </span></h2>
+    <h2> Car Cost: <span id="cost"> </span></h2>
+    <h2> Age of your Car: <span id="age"> </span></h2>
+    <h2> Good Condition?: <span id="condition"> </span></h2>
+    <h2> Your Car's Current Market Value <span id="currentvalue"> </span></h2>
+    
+    <button onclick="enterCar()"> Enter your Car information </button>
+    <script>
+    	function enterCar() {
+        	carmodel = prompt("Enter Car Model");
+            carcost = prompt("Enter Cost of the Car");
+            carage = prompt("How old is your car?");
+            good = confirm("In Good Condition? Ok for Yes / Cancel for No");
+            model.innerHTML = carmodel;
+            cost.innerHTML = carcost;
+            age.innerHTML = carage;
+            condition.innerHTML = (good) ? "Yes" : "No";      
+            computeMarketValue(parseFloat(cost),parseFloat(age),good); // create this function 
+        }
+        function computeMarketValue(){ //Function called computeMarketValue(), which computes for a car's CMV
+            var CMV = 0; //Variable CMV
+            var initialCMV = 0; //Variable initialCMV, where the 10% reduction isn't applies yet
+            if(carage > 10){ //If the car's age is greater than 10, its CMV value would be 70000
+                initialCMV = 70000;
+            }
+            else if(carage >= 8){ //If the car's age is greater than or equal to 8, its CMV value would be 10000
+                initialCMV = 100000;
+            }
+            else if(carage >= 5){ //If the car's age is greater than or equal to 5, its CMV value would be 75% less
+                initialCMV = carcost - (carcost * 0.75);
+            }
+            else{ //If the car's age is lesser than 5, its CMV value would be 50% percent less
+                initialCMV = carcost - (carcost * 0.50);
+            }
+            if(!good){ //If the car's condition is not good, its initialCMV value would be subtracted by 10%
+                CMV = initialCMV - (initialCMV * 0.1);
+            }
+            else{ //If the car's condition is good, its initialCMV value would still be the same as its CMV value
+                CMV = initialCMV;
+            }
+            document.getElementById('currentvalue').innerHTML = CMV; //The car's CMV value would be displayed in the element with ID called, 'currentvalue'
+        }
+    </script>
+    
+</body>
+</html>
