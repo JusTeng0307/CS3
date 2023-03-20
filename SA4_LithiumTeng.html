@@ -36,7 +36,7 @@
         }
         function computeMarketValue(){ //Function called computeMarketValue(), which computes for a car's CMV
             var CMV = 0; //Variable CMV
-            var initialCMV = 0; //Variable initialCMV, where the 10% reduction isn't applies yet
+            var initialCMV = 0; //Variable initialCMV, where the 10% reduction isn't applied yet
             if(carage > 10){ //If the car's age is greater than 10, its CMV value would be 70000
                 initialCMV = 70000;
             }
@@ -52,7 +52,7 @@
             if(!good){ //If the car's condition is not good, its initialCMV value would be subtracted by 10%
                 CMV = initialCMV - (initialCMV * 0.1);
             }
-            else{ //If the car's condition is good, its initialCMV value would still be the same as its CMV value
+            else{ //If the car's condition is good, its CMV value would still be the same as its initialCMV value
                 CMV = initialCMV;
             }
             document.getElementById('currentvalue').innerHTML = CMV; //The car's CMV value would be displayed in the element with ID called, 'currentvalue'
