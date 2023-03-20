@@ -54,9 +54,9 @@
             function cPix(imgClicked){ //Defines function cPix()
                 var avatarIMG = document.getElementById('avatar'); //Gets element with id, 'avatar'
                 var newIMG = imgClicked.src; //Assigns the source of the image clicked to a variable
-                var newALT = imgClicked.alt; //Assigns the alt text of the image clicked to a variable
+                var newTITLE = imgClicked.title; //Assigns the alt text of the image clicked to a variable
                 avatarIMG.src = newIMG; //Changes the image source of the element with the id, 'avatar' to its new source from the clicked image
-                avatarIMG.alt = newALT; //Changes the image alt text of the element with the id, 'avatar' to its new alt text from the clicked image
+                avatarIMG.title = newTITLE; //Changes the image alt text of the element with the id, 'avatar' to its new alt text from the clicked image
             }
         </script>
 	</body>
