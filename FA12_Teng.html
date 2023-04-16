@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Teng_Multiplication_Table_Generator</title>
+	<style>
+		#multiplicationTable{
+			border: 5px solid black;
+			border-collapse: collapse;
+		}
+		th{
+			border: 2px solid black;
+		}
+		td{
+			border: 2px solid black;
+		}
+	</style>
+</head>
+<body>
+	<h1>Multiplication Table Generator</h1>
+	<h2>Please enter a number between 2 and 10:</h2>
+	<label for="bNum">Beginning Value:</label><br>
+	<input type="number" id="bNum" name="bNum"><br>
+	<p>by</p>
+	<label for="eNum">Ending Value:</label><br>
+	<input type="number" id="eNum" name="eNum"><br><br>
+	<button onclick="generateTable()">Generate Multiplication Table</button>
+	<br><br>
+	<table id="multiplicationTable"></table>
+	<script>
+		function generateTable() {
+			var beginning = parseInt(document.getElementById("bNum").value);
+			var ending = parseInt(document.getElementById("eNum").value);
+			if(beginning < 2 || beginning > 10 || ending < 2 || ending > 10){
+				alert("Please enter numbers between 2 and 10.");
+			} 
+            else{
+				var table = document.getElementById("multiplicationTable");
+				table.innerHTML = ""; 
+				for(var i = 1; i <= ending - beginning; i++){
+					var row = table.insertRow();
+					for(var j = 1; j <= ending; j++){
+						var cell = row.insertCell();
+						cell.innerHTML = i * j;
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>
