@@ -34,7 +34,7 @@
         }
         else{
             for(i = startCodon; i < mRNA.length; i += 3){
-                var codon = mRNA.substr(i, 3);
+                var codon = mRNA.slice(i, i + 3);
                 if(geneticCode[codon] == "STOP"){
                     codonArr.push(codon);
                     document.write(codon + " --> STOP<br>");
