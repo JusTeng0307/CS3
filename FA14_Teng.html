@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Sign-Up Teng</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e5e5f7;
+            background: linear-gradient(135deg, #62637b55 25%, transparent 25%) 
+            -28px 0/ 56px 56px, linear-gradient(225deg, #62637b 25%, transparent 25%) 
+            -28px 0/ 56px 56px, linear-gradient(315deg, #62637b55 25%, transparent 25%) 
+            0px 0/ 56px 56px, linear-gradient(45deg, #62637b 25%, #e5e5f7 25%) 
+            0px 0/ 56px 56px;
+        }
+        #signup{
+            width: 50%;
+            margin: 0 auto;
+            background-color: #1e6091;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 25px;
+        }
+        fieldset{
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+        legend{
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        label{
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        #name, #username, #password, #interests, #gender, #email, #address{
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        #submit, #reset{
+            background-color: #18A558;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #submit:hover, #reset:hover{
+            background-color: #116530;
+        }
+        #output{
+            font-size: 18px;
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #1e6091;
+            box-shadow: 0 0 20px #CCCCCC;
+            text-align: center;
+            color: black;
+        }
+        h1{
+            font-size: 18px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form id = "signup" onsubmit = "return false">
+        <fieldset>
+            <legend>Welcome! Enter your details to sign-up:</legend>
+            <label for = "name">Name:</label><br>
+            <input id = "name" type = "text" name = "name" onblur = "blurFunction(this)" onfocus = "focusFunction(this)"><br>
+            <label for = "username">Username:</label><br>
+            <input id = "username" type = "text" name = "username" onblur = "blurFunction(this)" onfocus = "focusFunction(this)"><br>
+            <label for = "gender">Gender:</label><br>
+            <select id = "gender" name = "gender"><br>
+                <option value = "Male">Male</option>
+                <option value = "Female">Female</option>
+                <option value = "Prefer not to mention">Prefer not to mention</option>
+            </select><br>
+            <label for = "password">Password:</label><br>
+            <input type = "password" id = "password" name = "password" onblur = "blurFunction(this)" onfocus = "focusFunction(this)"><br>
+            <label for = "email">Email Address:</label><br>
+            <input id = "email" type = "email" name = "email" onblur = "blurFunction(this)" onfocus = "focusFunction(this)"><br>
+            <label for = "address">Address:</label><br>
+            <input id = "address" type = "text" name = "address" onblur = "blurFunction(this)" onfocus = "focusFunction(this)"><br>
+            <label for = "interests">Short Paragraph about Interests:</label><br>
+            <textarea id = "interests" name = "interests" onblur = "blurFunction(this)" onfocus = "focusFunction(this)"></textarea><br>
+            <input type = "submit" onclick = "displayOutput()" value = "Submit" id = "submit"><br>
+            <input type = "reset" onclick = "resetOutput()" value = "Reset" id = "reset"><br>
+        </fieldset>
+    </form>
+    <h1>Here are your details: </h1>
+    <p id = "output"></p>
+    <script>
+        function displayOutput(){
+            const output = document.getElementById("output");
+            const name = document.getElementById("name").value;
+            const username = document.getElementById("username").value;
+            const gender = document.getElementById("gender").value;
+            const password = document.getElementById("password").value;
+            const email = document.getElementById("email").value;
+            const address = document.getElementById("address").value;
+            const interests = document.getElementById("interests").value;
+            output.innerHTML = "Name: " + name + "<br />" + "Username: " + username + "<br />" + "Gender: " + gender + "<br />" +  
+            "Password: " + password + "<br />" + "Email: " + email + "<br />" + "Address: " + address + "<br />" + "Interests: " + interests + "<br />";
+        }
+        function resetOutput(){
+            document.getElementById("output").innerHTML = " ";
+        }
+        function blurFunction(input){
+            if (input.value == ""){
+                input.style.borderColor = "red";
+                input.style.borderWidth = "medium";
+            }
+        }
+        function focusFunction(input){
+            if(input.value != " "){
+                input.style.borderColor = "green";
+                input.style.borderWidth = "medium";
+            }
+        }
+    </script>
+</body>
+</html>
